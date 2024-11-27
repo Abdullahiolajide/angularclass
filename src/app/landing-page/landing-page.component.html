@@ -1,0 +1,30 @@
+<!-- <div class="d-flex justify-content-center align-items-center">
+    <div class="container text-center">
+        <h1>Welcome To the Home Page</h1>
+        <a routerLink="/contact"><button class="btn btn-primary Fs-3">Go to Contact Page</button></a>
+        <div>{{this.userService.msg}}</div>
+        <div>{{this.userService.lastName}}</div>
+
+        <div *ngFor="let people of this.userService.myArray; let i = index" >
+            <div>First Name: {{people.firstName}}</div>
+            <div>Last Name: {{people.lastName}}</div>
+            <div>Age: {{people.age}}</div>
+            <hr>
+        </div>
+    </div>
+</div> -->
+
+<div>
+    <nav class="m-3">
+        <ul class="row list-unstyled">
+            <li class="col-2"><a routerLink="/note">Note App</a></li>
+            <li class="col-2"><a routerLink="/rform">Reactive Form</a></li>
+            <li class="col-2"><a routerLink="/form">Template form</a></li>
+            <li class="col-2"><a routerLink="/signup">Sign Up</a></li>
+            <li class="col-2"><a routerLink="/login">Login</a></li>
+            <li class="col-2"><a routerLink="/userDashboard">Dashboard</a></li>
+            <li class="col-2"><a routerLink="/eparent">Event Parent</a></li>
+            <li class="col-2"><a routerLink="/login">Something</a></li>
+        </ul>
+    </nav>
+</div>

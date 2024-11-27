@@ -1,0 +1,65 @@
+<div class="container">
+    <form action="" class="col-lg-5 container shadow my-4 py-3" #form="ngForm">
+        <h1 class="text-center text-dark">Sign Up</h1>
+        <div class="alert alert-danger text-center" *ngIf="this.checkEmail">Email Already Exists</div>
+        <input type="text" class="form-control my-2" name="firstname" placeholder="First Name" [(ngModel)]="firstname"
+        #fname="ngModel" [required]="true"
+        [class.is-valid]="fname.valid && fname.touched" [class.is-invalid]="fname.invalid && fname.touched">
+        <small *ngIf="fname.invalid && fname.touched" class="text-danger">This field is required</small>
+
+
+        <input type="text" class="form-control my-2" name="lastname" placeholder="Last Name" [(ngModel)]="lastname"
+        #lname="ngModel" [required]="true"
+        [class.is-valid]="lname.valid && lname.touched" [class.is-invalid]="lname.invalid && lname.touched">
+        <small *ngIf="lname.invalid && lname.touched" class="text-danger">This field is required</small>
+
+
+        <input type="text" class="form-control my-2" name="email" placeholder="E-mail" [(ngModel)]="email"
+        #emal="ngModel" [required]="true"
+        [class.is-valid]="emal.valid && emal.touched" [class.is-invalid]="emal.invalid && emal.touched">
+        <small *ngIf="emal.invalid && emal.touched" class="text-danger">This field is required</small>
+
+
+        <input type="text" class="form-control my-2" name="password" placeholder="password" [(ngModel)]="password"
+        #pword="ngModel" [required]="true" minlength="8"
+        [class.is-valid]="pword.valid && pword.dirty" [class.is-invalid]="pword.invalid && pword.dirty">
+        <small *ngIf="pword.invalid && pword.dirty" class="text-danger">
+            <small *ngIf="pword.hasError('minlength') ">Mininum length required is 8</small>
+            <small *ngIf="pword.hasError('required') ">This field is required</small>
+        </small> 
+
+        <small>Select Class</small>
+        <select name="class" id="class" class="form-select" [(ngModel)]="studentClass">
+            <option value="jss1">JSS 1</option>
+            <option value="jss2">JSS 2</option>
+            <option value="jss3">JSS 3</option>
+            <option value="sss1">SSS 1</option>
+            <option value="sss2">SSS 2</option>
+            <option value="sss3">SSS 3</option>
+          </select>
+          
+          <div *ngIf="studentClass === 'sss1' || studentClass === 'sss2' || studentClass === 'sss3'">
+            <small>Select Department</small>
+            <select name="department" id="department" class="form-select" [(ngModel)]="department">
+                <option value=""></option>
+              <option value="science">Science</option>
+              <option value="art">Art</option>
+              <option value="commercial">Commercial</option>
+            </select>
+          </div>
+
+          <small>Gender</small>
+            <select name="department" id="department" class="form-select" [(ngModel)]="gender">
+                <option value=""></option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+
+            <small>Date of Birth</small>
+            <input type="date" name="dob" [(ngModel)]="dob" class="form-control my-2">
+
+
+        <div><input type="checkbox" class=" my-2" name="cbox" [(ngModel)]="cbox" [required]="true"><span> I accept terms of condition and privacy policy </span></div>
+        <input type="button" class="form-control my-2 btn btn-outline-dark" [disabled]="form.invalid" value="Sign Up" (click)="signUp()">
+    </form>
+</div>

@@ -1,0 +1,45 @@
+
+<div class="container">
+    <div class="row d-flex w-100">
+        <h1 class="text-primary">Template Driven Form Validation</h1>
+        <form #form="ngForm" action="" class="col-8">
+            <!--======================= First Name ======================-->
+            <input type="text" placeholder="First Name" name="firstname" [(ngModel)]="firstname" 
+             #fname = "ngModel" minlength="3" [required]="true"
+             [class.is-valid]="fname.valid && fname.dirty"
+             [class.is-invalid]="fname.invalid && fname.touched" class="form-control my-2">
+                <small *ngIf="fname.invalid && fname.dirty">
+                    <small *ngIf="fname.hasError('minlength')" class="text-danger">Cannot be less than 3</small>
+                    <small *ngIf="fname.hasError('required')" class="text-danger">Field cannot be empty</small>
+                </small>
+             <!--======================= Last Name ======================-->
+            <input type="text" placeholder="Last Name" name="lastname" [(ngModel)]="lastname"
+             class="form-control my-2" [required]="true" #lname="ngModel"
+             [class.is-valid]="lname.valid && lname.dirty"
+             [class.is-invalid]="lname.invalid && lname.touched">
+
+             <!--=======================  Age ======================-->
+            <input type="number" placeholder="Age" name="age" [(ngModel)]="age"
+             class="form-control my-2" #age="ngModel" min="18" max="35" [required]="true"
+             [class.is-valid]="age.valid && age.dirty"
+             [class.is-invalid]="age.invalid && age.touched">
+             <small *ngIf="age.invalid && age.dirty" class="text-danger">
+                <small *ngIf="age.hasError('min')" >Minimun age required is 18</small>
+                <small *ngIf="age.hasError('max')" >Maximum age required is 35</small>
+                <small *ngIf="age.hasError('required')" >Field cannot be empty</small>
+             </small>
+
+             <!--=======================  Password ======================-->
+            <input type="text" placeholder="Password" name="password" [(ngModel)]="password"
+             class="form-control my-2">
+
+             <!--=======================  CheckBox ======================-->
+             <div><input type="checkbox" name="checkbox" [(ngModel)]="checkbox" #cbox="ngModel" [required]="true">
+                <span> I agree to all the terms and conditions</span></div>
+                
+            <input type="submit" value="Submit" class="btn btn-primary" 
+            [disabled]="form.invalid">
+
+        </form>
+    </div>
+</div>

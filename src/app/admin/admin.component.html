@@ -1,0 +1,29 @@
+<div>
+    <h2>Welcome Admin, {{firstname}}</h2>
+    <a routerLink="receiptapproval">See receipts</a>
+
+</div>
+
+<table class="table table-bordered table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>SN</th>
+      <th>Student Name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Deactivate</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of studentCredentials; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{item.firstname}} {{item.lastname}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.status}}</td>
+      <td><button class="btn btn-warning btn-sm" (click)="deactivate(i)">Deactivate</button></td>
+      <td><button class="btn btn-danger btn-sm">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+

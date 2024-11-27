@@ -1,0 +1,26 @@
+<p>cnt-behaviour works!</p>
+<div class="container">
+    <div class="col-8 mx-auto" >
+        <!-- <input type="text" class="for-control my-2 shadow" [(ngModel)]="update"> -->
+         <table class="table">
+            <thead>
+                <tr>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Email</td>
+                    <td>Phonenumber</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr (click)="upd(i)" *ngFor="let contact of this.userService.contactAppInfo; let i = index">
+                    <td>{{contact.Firstname}}</td>
+                    <td>{{contact.lastname}}</td>
+                    <td>{{contact.email}}</td>
+                    <td>{{contact.Phonenumber}}</td>
+                    <!-- <td><button >Update</button></td> -->
+                    </tr>
+            </tbody>
+         </table>
+
+    </div>
+<app-sub-cnt-behaviour></app-sub-cnt-behaviour>

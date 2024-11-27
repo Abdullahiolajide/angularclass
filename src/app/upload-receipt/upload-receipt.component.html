@@ -1,0 +1,13 @@
+<app-student-navbar></app-student-navbar>
+<div class="container">
+    <div class="mx-auto col-5">
+        <div class="overflow-hidden border" style="width: 200px; height: 200px;">
+            <img [src]="storedImg" alt=""  style="width: 200px;">
+        </div>
+        <input type="file" class="form-control" (change)="fileSelect($event)">
+        <input type="submit" class="form-control btn btn-dark" (click)="uploadReceipt()"/>
+    </div>
+</div>
+<div>
+    <h3>Receipt Status: {{receiptStatus}}</h3>
+</div>

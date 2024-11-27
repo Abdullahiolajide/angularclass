@@ -1,0 +1,37 @@
+<app-student-navbar></app-student-navbar>
+<div>
+    <h2 class="text-center mt-5">Registered Courses</h2>
+</div>
+<div class="container col-12 row">
+    <div class="col-6 container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Courses</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let items of studentCourses let i = index">
+                    <td>{{items}}</td>
+                    <td><button class="btn btn-primary">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="col-6">
+        <select name="courses" id="" multiple class="col-12 p-3 " [(ngModel)]="courses">      
+            <option value="Mathematics">mathematics</option>
+            <option value="English">english</option>
+            <option value="Physics">physics</option>
+            <option value="Biology">biology</option>
+            <option value="Yoruba">yoruba</option>
+            <option value="Agriculture">agriculture</option>
+            <option value="Government">government</option>
+            <option value="Literature">literature</option>
+        </select>
+        <button class="btn btn-outline-primary" (click)="register()" [disabled]="isDisabled" >Register</button>
+    </div>
+</div>
+<a routerLink="/userDashboard/registerCourse"><button class="btn btn-outline-dark">Register More Courses</button></a>

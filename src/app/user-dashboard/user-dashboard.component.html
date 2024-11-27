@@ -1,0 +1,60 @@
+<style>
+    a{
+        padding: 2%;
+        text-decoration: none;
+        color: white;
+    }
+    a:hover{
+        background-color: white;
+        color: black;
+        transition-duration: 0.3s;
+    }
+</style>
+<div class="">
+    <div class="col-12 bg-dark text-white p-3 border gap-2" style="justify-content: space;">
+        <span class="fs-4 col-2 me-2">Welcome, {{firstname}}</span>
+        
+        <a routerLink="/userDashboard/updatepassword">
+            Update Password
+        </a>
+        <a routerLink="/userDashboard/registerCourse">
+            Register Course
+        </a>
+        <a routerLink="/userDashboard/viewcourses">
+            View Course
+        </a>
+        <a routerLink="/userDashboard/pinfo">
+           Profile Info
+        </a>
+        <a routerLink="/userDashboard/viewclassmates">
+           classmates
+         </a>
+         <a routerLink="/userDashboard/notekeep">
+            My notes
+          </a>
+          <a routerLink="/userDashboard/uploadreceipt">
+            Upload receipt
+          </a>
+
+        <a routerLink="/userDashboard/uploadpfp" class="mx-auto" >
+            <div style="float: right;">
+                <div style="width: 100px; height: 100px; border: 2px solid rgb(201, 201, 201);" class="rounded-circle bg-secondary overflow-hidden">
+                    <img style="width: 100px" [src]="base64String" alt="">
+                </div>
+            </div>
+        </a>
+
+       
+    </div>
+   
+</div>
+
+<section>
+    <div class="container-lg bg-dark rounded border my-5">
+        <div class="border p-2 bg-light">First Name: {{firstname}} </div>
+        <div class="border p-2 bg-light">Last Name: {{lastname}}</div>
+        <div class="border p-2 bg-light">Email: {{email}} </div>
+    </div>
+</section>
+
+<button class="btn btn-outline-dark m-3" (click)="logout()">Logout</button>

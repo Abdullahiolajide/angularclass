@@ -1,0 +1,11 @@
+<div class="container mt-5 w-50 shadow">
+    <div class="fs-1 text-center">Edit Contact Details</div>
+    <div class="container mb-5 d-block w-100 pe-5 ps-5 pb-5 pt-2 form">
+        <input type="text"  [(ngModel)]="firstname" class="w-100 mt-1 mb-1" placeholder="First Name">
+        <input type="text" [(ngModel)]="lastname"  class="w-100 mt-1 mb-1" placeholder="Last Name">
+        <input type="text" [(ngModel)]="email"  class="w-100 mt-1 mb-1" placeholder="Email">
+        <input type="text" [(ngModel)]="phonenumber" class="w-100 mt-1 mb-1" placeholder="Phonenumber"> <br>
+        <button (click)="editFunc()" class="btn btn-outline-primary mt-4 w-100 text-center">EDIT</button>
+    </div>
+</div>
+

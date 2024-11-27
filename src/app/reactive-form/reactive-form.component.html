@@ -1,0 +1,43 @@
+<p>reactive-form works!</p>
+<div class="container">
+    <div class="col-6 mx-auto shadow p-3">
+        <h1 class="text-success text-center">Reactive Form</h1>
+        <div>
+            <form [formGroup]="formOne">
+                <input type="text" class="form-control my-2" formControlName="fname" placeholder="Firstnamee" name="firstname"
+                [class.is-valid]="formOne.get('fname')?.valid && formOne.get('fname')?.dirty" [class.is-invalid]="formOne.get('fname')?.invalid && formOne.get('fname')?.dirty">
+
+                <div *ngIf="formOne.get('fname')?.invalid">
+                    <span *ngIf="formOne.get('fname')?.getError('minlength')" class="text-danger">Minimun of 4 letters</span>
+                </div>
+
+                <input type="text" class="form-control my-2" formControlName="pnumber" placeholder="Phonenumber" name=""
+                [class.is-valid]="formOne.get('pnumber')?.valid && formOne.get('pnumber')?.dirty" [class.is-invalid]="formOne.get('pnumber')?.invalid && formOne.get('pnumber')?.dirty">
+                    <div *ngIf="formOne.get('pnumber')?.invalid">
+                        <span class="text-danger" *ngIf="formOne.get('pnumber')?.getError('minlength')"> Must be more than 11 characters</span>
+
+                    </div>
+
+                <input type="text" class="form-control my-2" formControlName="lname" placeholder="LastName" name=""
+                [class.is-valid]="formOne.get('lname')?.valid && formOne.get('lname')?.dirty" [class.is-invalid]="formOne.get('lname')?.invalid && formOne.get('lname')?.dirty">
+                <div *ngIf="formOne.get('lname')?.invalid">
+                    <span class="text-danger" *ngIf="formOne.get('lname')?.getError('minlength')"> Must be more than 4 characters</span>
+
+                </div>
+
+
+                <input type="text" class="form-control my-2" formControlName="email" placeholder="Email" name=""
+                [class.is-valid]="formOne.get('email')?.valid && formOne.get('email')?.dirty" [class.is-invalid]="formOne.get('email')?.invalid && formOne.get('email')?.dirty">
+
+                <div *ngIf="formOne.get('email')?.invalid && formOne.get('email')?.dirty">
+                    <span class="text-danger" *ngIf="formOne.get('email')?.getError('required')"> Field is required</span>
+
+                </div>
+                <input type="checkbox" name="chbox" formControlName="cbox" required> <span>accept privacy policy</span>
+
+                <button class="btn btn-outline-success w-100" name="" (click)="reactivef()" [disabled]="formOne.invalid">Reactive Form</button>
+
+            </form>
+        </div>
+    </div>
+</div>

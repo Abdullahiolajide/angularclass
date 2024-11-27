@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="col-8 mx-auto shadow p-5">
+        <div>
+            <h3>This is the parent Component</h3>
+            <input type="text" class="form-control my-3" [(ngModel)]="msgToChild">
+            <button class="btn btn-primary" (click)="sendToChild()">Send To Child</button>
+            
+        </div>
+
+        <div>
+            <p>Msg From Child: {{response}}</p>
+        </div>
+        <div>
+            <app-event-child [sendMsg]="AmsgToChild" (eventemit)="receivemsg($event)"></app-event-child>
+        </div>
+    </div>
+</div>

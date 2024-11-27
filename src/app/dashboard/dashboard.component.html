@@ -1,0 +1,26 @@
+<p>dashboard works!</p>
+<div>{{this.userService.firstName}}</div>
+<div>{{this.userService.age}}</div>
+<div>ewlhi</div>
+<div>
+    <table border="1" class="container table">
+        <thead>
+           <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Phonenumber</td>
+           </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let contact of this.userService.contactAppInfo">
+                <td>{{contact.Firstname}}</td>
+                <td>{{contact.lastname}}</td>
+                <td>{{contact.email}}</td>
+                <td>{{contact.Phonenumber}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="container"><button routerLink="/contact" class="btn btn-primary text-center">Contact</button></div>
+</div>

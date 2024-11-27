@@ -1,0 +1,26 @@
+<table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>SN</th>
+        <th>Student Name</th>
+        <th>Email</th>
+        <th>Receipt</th>
+        <th>Status</th>
+        <th>Approve</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of studentCredentials; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{item.firstname}} {{item.lastname}}</td>
+        <td>{{item.email}}</td>
+        <td><img [src]="item.receipt" alt="" style="width: 200px;"></td>
+        <td>
+            <!-- {{item.receiptStatus}} -->
+        <span *ngIf="item.receiptStatus == 'Approved' ">Approved</span>
+        <span *ngIf="item.receiptStatus !== 'Approved' ">Not Approved</span>
+    </td>
+        <td><button class="btn btn-warning btn-sm" (click)="approveReceipt(i)">Approve</button></td>
+      </tr>
+    </tbody>
+  </table>

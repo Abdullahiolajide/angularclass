@@ -1,0 +1,104 @@
+<app-student-navbar></app-student-navbar>
+<div class="d-flex">
+  <div class="container my-4">
+    <h2 class="text-center">Course Registration</h2>
+    <h4>{{msg}}</h4>
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>SN</th>
+          <th>Courses</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>English</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="registerCourse('English')">Register</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Mathematics</td>
+          <td>
+            <button class="btn btn-primary btn-sm" (click)="registerCourse('Mathematics')">Register</button>
+          </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Chemistry</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="registerCourse('Chemistry')">Register</button>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Physics</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="registerCourse('Physics')">Register</button>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Biology</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="registerCourse('Biology')">Register</button>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Yoruba</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="registerCourse('Yoruba')">Register</button>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Agriculture</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="registerCourse('Agriculture')">Register</button>
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Government</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="registerCourse('Government')">Register</button>
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Literature</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="registerCourse('Literature')">Register</button>
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Economics</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="registerCourse('Economics')">Register</button>
+            </td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td>Geography</td>
+            <td>
+              <button class="btn btn-primary btn-sm" (click)="registerCourse('Geography')">Register</button>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+  
+  </div>
+  <!-- <div  class="col-4 border my-5">
+    <div *ngFor="let item of studentCourses" class="d-block col-12 bg light w-25">
+      <div>{{item}}</div>
+  </div>
+  <button class="btn btn-primary" (click)="register()">Register Course</button>
+  </div> -->
+  
+</div>

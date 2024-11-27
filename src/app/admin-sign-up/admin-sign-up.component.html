@@ -1,0 +1,45 @@
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white text-center">
+            <h3>Admin Sign Up</h3>
+            
+          </div>
+          <div class="text-danger text-center">{{msg}}</div>
+          <div class="card-body">
+              <!-- First Name -->
+              <div class="mb-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="Enter your first name" required [(ngModel)]="firstname">
+              </div>
+
+              <!-- Last Name -->
+              <div class="mb-3">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" name="lastname" class="form-control" id="lastname" placeholder="Enter your last name" required [(ngModel)]="lastname">
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required [(ngModel)]="email">
+              </div>
+
+              <!-- Password -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" required [(ngModel)]="password">
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button type="" class="btn btn-primary" (click)="signUp()">Signn Up</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

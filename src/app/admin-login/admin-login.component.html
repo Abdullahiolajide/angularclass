@@ -1,0 +1,32 @@
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-header bg-primary text-white text-center">
+            <h3>Admin Sign In</h3>
+          </div>
+          <div class="text-danger text-center">{{msg}}</div>
+          <div class="card-body">
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required [(ngModel)]="email">
+              </div>
+
+              <!-- Password -->
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" required [(ngModel)]="password">
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button type="" class="btn btn-primary" (click)="signIn()">Sign In</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

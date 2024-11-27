@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="col-lg-6 col-sm-9 col-md- 8 mx-auto shadow p-3">
+        <h1 class="text-success text-center">Note App</h1>
+        <div>
+            <form [formGroup]="formOne">
+                <input type="text" class="form-control my-2" formControlName="title" placeholder="Title" name="title">
+                <textarea class="form-control my-2" formControlName="content" placeholder="Content" name="content"></textarea>
+                <button class="btn btn-outline-success w-100" name="" (click)="addNote()">Add Note</button>
+
+            </form>
+
+            <div class="container mt-3">
+                <h2 class="text-center my-3 text-success fst-italic">Read your notes</h2>
+                <div>
+                  <div *ngFor="let item of noteArray let i = index" class="pt-2 cursorh">
+                    <!-- (click)="routeToView(i)" -->
+                      <div (click)="routeToView(i)">
+                        <h6 class="ps-2">{{item.title}}</h6>
+                        <button (click)="edit(i); $event.stopPropagation()" class="btn btn-success mx-1"  data-bs-toggle="modal" data-bs-target="#exampleModal">EDIT</button>
+                        <button (click)="del(i); $event.stopPropagation()" class="btn btn-outline-danger mx-1">DELETE</button>
+                        <hr>
+                      </div>
+      
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Notes</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <input type="text" [(ngModel)]="editTitleValue" placeholder="Edit Title"  class="form-control">
+         <textarea [(ngModel)]="editContentValue" placeholder="Edit Content" style="height: 30vh;" class="form-control mt-1"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" (click)="saveEdit()" data-bs-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>

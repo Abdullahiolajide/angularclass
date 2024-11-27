@@ -1,0 +1,26 @@
+<app-student-navbar></app-student-navbar>
+<div class="container col-12">
+    <div class="col-6 mx-auto">
+        <h1 class="text-center">Student Profile Information</h1>
+        <input type="text" class="form-control my-2" placeholder="Name" [(ngModel)]="firstname">
+        <input type="text" class="form-control my-2" placeholder="Name" [(ngModel)]="lastname">
+        <input type="text" class="form-control my-2" placeholder="Email" [(ngModel)]="email">
+        <input type="date" class="form-control my-2" placeholder="dob" [(ngModel)]="dob">
+        <div>
+            <small>Select Class</small>
+            <select name="class" id="class" class="form-select" [(ngModel)]="studentClass" [disabled]="true">
+                <option value="jss1">JSS 1</option>
+                <option value="jss2">JSS 2</option>
+                <option value="jss3">JSS 3</option>
+                <option value="sss1">SSS 1</option>
+                <option value="sss2">SSS 2</option>
+                <option value="sss3">SSS 3</option>
+            </select>
+        </div>
+        <div class="my-2">
+            <small>Registration Number</small>
+            <input type="text" class="form-control" [(ngModel)]="regNumber" [disabled]="true">
+        </div>
+        <input type="button" class="form-control my-2 btn btn-outline-primary" value="Edit Profile" (click)="editProfile()">
+    </div>
+</div>
